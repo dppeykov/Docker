@@ -28,4 +28,17 @@
 
  - **docker container run -it --name proxy nginx bash** - will create and run a new container with the nginx image and will enter the bash shell (-it = interactive + tty (ssh like)) - to exit Ctrl+C (stops the container)
  - **docker container start -ai proxy** - will connect to the container (-ai = attach + interactive) - we need start as once we are out of the container it will be stopped (if using Ctrl+C to exit)
- - **docker container exec -it proxy ls** - will just execute the command and exit the container (the container needs to be up and after the command execution it stays up) - exec actually runs an additional process in the container and does not affect the already running process
+ - **docker container exec -it proxy ls** - will just execute the command and exit the container (the container needs to be up and after the command execution it stays up) - exec actually runs an additional process in the container and does not affect the already running process - exec runs additional commands in an existing container
+
+
+## Docker networks
+
+ - **docker container port webhost** - will check what port is open on the container with the name webhost - REMEMBER: the -p option is used to open ports when creating a container (-p <HOST>:<CONTAINER>)
+
+> When starting a container, we are connecting in the background to a network:
+ - By default this is the bridge network (to see the networks use **docker network ls** -> will give bridge, host and null). 
+ - Each virtual network routes through NAT firewall on the host IP. 
+ - All containers on a virtual network can talk to each other without -p option
+ - Best practice is to create new virtual networks for each app
+ - In docker "the batteries are included, but removable" = the defaults work just fine, but they can be easily modified
+
