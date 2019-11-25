@@ -36,9 +36,16 @@
  - **docker container port webhost** - will check what port is open on the container with the name webhost - REMEMBER: the -p option is used to open ports when creating a container (-p <HOST>:<CONTAINER>)
 
 > When starting a container, we are connecting in the background to a network:
-> - By default this is the bridge network (to see the networks use **docker network ls** -> will give bridge, host and null). 
+> - By default this is the bridge network (to see the networks use **docker network ls** -> will give **bridge, host and null**). 
 > - Each virtual network routes through NAT firewall on the host IP. 
 > - All containers on a virtual network can talk to each other without -p option
 > - Best practice is to create new virtual networks for each app
 > - In docker "the batteries are included, but removable" = the defaults work just fine, but they can be easily modified
+
+ - **docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost** - to get the IP of the container network (this will give an IP address in the docker0/bridge network, which is not the host network)
+ 
+> So if we have a container created with -p -> this will attach the container to the bridge/docker0 network and also open a port in the host network, so the traffic can go back and forth from and to the container from the the outside network (the host). This is done with NAT between the bridge and the host networks. 
+
+>**IMPORTANT**: if we just create a conteiner/s without the -p option -> those containers will be able to talk to each other by default as all of them will be attached to the bridge/docker0 network, but they won't be able to talk to other (outside) networks 
+
 
