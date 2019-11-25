@@ -56,3 +56,9 @@
  - **docker network inspect bridge** - can show all the containers that are attached to the bridge network
  - **docker network create name_of_the_net** - will create a network with a driver of bridge (use **docker network create --help** for more options)
  
+ROUND-ROBIN EXERCISE:
+
+ - **docker network create dude** - creates a network with the name dude
+ - **docker container run -d --net dude --net-alias search elasticsearch:2** - will create a detached container with random name and will attach it to the dude network + will create an alias search (with the DNS alias we can use the same name and load balance between several containers with the same alias)
+ - **docker container run --rm --net dude alpine nslookup search** - to check what containers will resolve the alias name and respond to a request
+ - **docker container run --rm --net dude centos curl -s search:9200** - testing with a centos image - the result is that one time the DNS is sending the request to the first and then to the second container (if we have 2) - IMPORTANT: it is not perfect load balancing (e.g. it can send more requests to either of the servers)
