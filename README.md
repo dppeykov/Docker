@@ -36,9 +36,9 @@
  - **docker container port webhost** - will check what port is open on the container with the name webhost - REMEMBER: the -p option is used to open ports when creating a container (-p <HOST>:<CONTAINER>)
 
 > When starting a container, we are connecting in the background to a network:
- - By default this is the bridge network (to see the networks use **docker network ls** -> will give bridge, host and null). 
- - Each virtual network routes through NAT firewall on the host IP. 
- - All containers on a virtual network can talk to each other without -p option
- - Best practice is to create new virtual networks for each app
- - In docker "the batteries are included, but removable" = the defaults work just fine, but they can be easily modified
+> - By default this is the bridge network (to see the networks use **docker network ls** -> will give bridge, host and null). 
+> - Each virtual network routes through NAT firewall on the host IP. 
+> - All containers on a virtual network can talk to each other without -p option
+> - Best practice is to create new virtual networks for each app
+> - In docker "the batteries are included, but removable" = the defaults work just fine, but they can be easily modified
 
