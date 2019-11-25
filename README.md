@@ -48,4 +48,5 @@
 
 >**IMPORTANT**: if we just create a conteiner/s without the -p option -> those containers will be able to talk to each other by default as all of them will be attached to the bridge/docker0 network, but they won't be able to talk to other (outside) networks 
 
+> Also we can create more than 1 virtual networks (bridge) - the purpose is to separate the apps we are creating
 
