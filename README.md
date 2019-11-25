@@ -15,4 +15,5 @@
 ## Basic commands
 
  - **docker container run --name webhost -p 8080:80 -d nginx** - creates a container with the name webhost, detached (running in the background), opening port 8080 on the host and listening on 80 in the container (<HOST>:<CONTAINER>) from the nginx image (if the image is not on the system it will be downloaded from docker hub - it will download nginx:latest as the release is not specified in this example)
-  - **docker top** - shows the processes
+ - **docker top** - shows the processes running in the container
+
