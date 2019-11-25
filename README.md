@@ -63,5 +63,6 @@
  - **docker container run --rm --net dude alpine nslookup search** - to check what containers will resolve the alias name and respond to a request
  - **docker container run --rm --net dude centos curl -s search:9200** - testing with a centos image - the result is that one time the DNS is sending the request to the first and then to the second container (if we have 2) - IMPORTANT: it is not perfect load balancing (e.g. it can send more requests to either of the servers)
 
+## Docker Images
 
-https://docs.docker.com/v17.09/engine/userguide/storagedriver/images/sharing-layers.jpg
+![alt text](https://docs.docker.com/v17.09/engine/userguide/storagedriver/images/sharing-layers.jpg "Images")
