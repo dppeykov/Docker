@@ -50,5 +50,5 @@
 
 > Also we can create more than 1 virtual networks (bridge) - the purpose is to separate the apps we are creating
 
->**IMPORTANT**: we can't have more than 1 container listening on the same port on a host level. Example: if we have 1 container listening on port 80 on the host, we can't create another container with the same. 
+>**IMPORTANT**: we can't have more than 1 container listening on the same port on a host level. Example: if we have 1 container listening on port 80 on the host, we can't create another container with the same (because the port is already open and in use). 
 
