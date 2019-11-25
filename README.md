@@ -52,3 +52,7 @@
 
 >**IMPORTANT**: we can't have more than 1 container listening on the same port on a host level. Example: if we have 1 container listening on port 80 on the host, we can't create another container with the same (because the port is already open and in use). 
 
+ - **docker network ls** - bridge (docker0) - the default that bridges through the host NAT firewall (NATed behind the host IP), the host - can attach the container directly to the host network (security concerns + usually imporves the performance), none - like an interface that is not attached to anything - just spawns new virtual network where we can attach containers
+ - **docker network inspect bridge** - can show all the containers that are attached to the bridge network
+ - **docker network create name_of_the_net** - will create a network with a driver of bridge (use **docker network create --help** for more options)
+ 
