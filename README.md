@@ -83,7 +83,8 @@
  - **docker pull nginx** - will download the nginx image - good practice in a production is to use the same images, same versions 
  - **docker image inspect nginx** - showing all of the details about the image (aka metadata) - basic infor like the image ID, tags, etc. + details how the image expects to be ran
  
- - **Image tags** - just labels that are pointing to the same image ID - tags are used for the versions - like :latest, :1.11.0, :mainline etc.
+ - **Image tags** - just labels that are pointing to the same image ID - tags are used for the versions - like :latest, :1.11.0, :mainline etc. - the :latest tag is the default tag
+ 
  - **docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]** - to create our own tags:
    - Example: **docker image tag nginx dpp/nginx** - will create a new image from nginx with REPOSITORY dpp/nginx and use the latest tag by default (as we didn't specify a tag). If we want to push the image to DockerHub: 
    - **docker image push dpp/nginx** - important is that the dpp repository (account) must exist before we are able to push to dockerhub & we have to login first (docker login/logout commands) - we can check the config.json file for the auth - cat .docker/config.json - with this command we will upload (push) the image repo dpp/nginx with tag :latest
