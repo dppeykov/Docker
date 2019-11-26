@@ -93,3 +93,11 @@
 
 ### Creating Docker Images
   
+#### Dockerfile Basics
+
+ - The Dockerfile is executed from top to the bottom, so the order in the statements inside matters
+ - **FROM** - minimal distribution - like alpine - all images must have FROM
+ - **ENV** - optional env vars - a lot of the times used for keys
+ - **RUN** - run commands - update, installing software, logs etc. - && chains the commands
+ - **EXPOSE** - exposes ports from the container on the docker virtual network
+ - **CMD** - required - the command that runs when container is launched
