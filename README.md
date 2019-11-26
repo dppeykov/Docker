@@ -105,6 +105,15 @@
  - **COPY** - copy local files into the container
 
 **EXAMPLE FILE**: https://github.com/dppeykov/Docker/blob/master/Dockerfile
+
 **EXAMPLE FILE**: https://github.com/dppeykov/Docker/blob/master/Dockerfile-sample2
 
 - **docker image build -t customnginx .** - will use the Dockerfile in the same directory to build an image with repository customnginx and tag latest (default) - all images mentioned in the Dockerfile will be downloaded and used in the build - on every change in the Dockerfile, we can build the image again and it will use the already cached layers to build it faster
+
+ - **docker image prune** - to clean up just "dangling" images 
+ - **docker system prune** - will clean up everything
+ - **docker image prune -a** - will remove all images you're not using
+ - **docker system df** - to see space usage\
+
+https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu.be
+
