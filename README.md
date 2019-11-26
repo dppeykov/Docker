@@ -115,5 +115,5 @@
  - **docker image prune -a** - will remove all images you're not using
  - **docker system df** - to see space usage\
 
-https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu.be
+Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu.be
 
