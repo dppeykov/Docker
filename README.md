@@ -90,4 +90,6 @@
    - **docker image push dpp/nginx** - important is that the dpp repository (account) must exist before we are able to push to dockerhub & we have to login first (docker login/logout commands) - we can check the config.json file for the auth - cat .docker/config.json - with this command we will upload (push) the image repo dpp/nginx with tag :latest
 
 > **IMPORTANT**: if you're using an untrusted machine ALWAYS logout! 
+
+### Creating Docker Images
   
