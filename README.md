@@ -105,5 +105,6 @@
  - **COPY** - copy local files into the container
 
 **EXAMPLE FILE**: https://github.com/dppeykov/Docker/blob/master/Dockerfile
+**EXAMPLE FILE**: https://github.com/dppeykov/Docker/blob/master/Dockerfile-sample2
 
 - **docker image build -t customnginx .** - will use the Dockerfile in the same directory to build an image with repository customnginx and tag latest (default) - all images mentioned in the Dockerfile will be downloaded and used in the build - on every change in the Dockerfile, we can build the image again and it will use the already cached layers to build it faster
