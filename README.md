@@ -65,4 +65,20 @@
 
 ## Docker Images
 
+ - **Image** - app binaries and dependencies + metadata about the image data and how to run the image - it's not a complete OS (no kernel, kernel modules, etc.) - can be really small (a single file) or big as a whole OS (multiple GB)
+ - **Official definition** - an image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime
+
 ![alt text](https://docs.docker.com/v17.09/engine/userguide/storagedriver/images/sharing-layers.jpg "Images")
+
+ - **docker history nginx** - old format of the command - will show all the layers of the nginx image - all changes made in an image
+ - Every image starts with a blank layer (aka **sctratch**), then every set of changes that happens after that is know as a layer and gets its own unique SHA value (to be able to identify the separate layers)
+ - Example Ubuntu image: (Ubuntu -> Apt -> ENV) image
+ - Example custom image: (Custom scratch layer -> Existing layer/s -> Our changes)
+ - The layers are using SHAs (able to recognize the unique layers), because this allows docker to store a layer only once in the system no matter in how many images we are using it - reduces the disk space
+ - **Container** - when we run a new container (e.g. base read only image), all docker does is to **run a new read/write image layer on top** of the existing image
+ - **Copy on write (cow)** - if we are changing something in the base image (a file for example), it will simply copy the change (file) into the write the write top layer in the container and then save all the differences (the changed file) in the same layer (the container)
+
+ - **DockerHub** - https://hub.docker.com/ - docker registry with a lot of images - typically we alwas start with the official image (no xxx/ in front of the name -> example nginx VS nginx/unit) - the official images usually have better documentation - we have versioning (stable + edge) organized with tags
+ - **docker image ls** - to see what is downloaded on the host 
+ - **docker pull nginx** - will download the nginx image - good practice in a production is to use the same images, same versions 
+ - **docker image inspect nginx** - showing all of the details about the image (aka metadata) - basic infor like the image ID, tags, etc. + details how the image expects to be ran
