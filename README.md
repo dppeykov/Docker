@@ -101,6 +101,8 @@
  - **RUN** - run commands - update, installing software, logs etc. - && chains the commands
  - **EXPOSE** - exposes ports from the container on the docker virtual network
  - **CMD** - required - the command that runs when container is launched
+ - **WORKDIR** - changes the working directory = running cd /some/path
+ - **COPY** - copy local files into the container
 
 **EXAMPLE FILE**: https://github.com/dppeykov/Docker/blob/master/Dockerfile
 
