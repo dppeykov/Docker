@@ -131,7 +131,11 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
  
 ### Data volumes
 
- - **VOLUME** command in Dockerfile - 
+ - **VOLUME** command in Dockerfile - maps the volume on the host with a directory in the container
+ - **docker volume ls** - to see what volumes are created - will show the SHAs as volume names
+ - **docker volume inspect 47e48** - will show metadata for the volume starting with 47e48 - when it is created, mount point, name, etc.
+
+> **IMPORTANT**: if we delete the containers, the volumes will stay - they will outlive the containers, because those are forms of a persistence storage - even using docker system prune will not delete the volumes that are in use - we need to stop the containers that are using the volumes first and then they can be removed
  
 
 
