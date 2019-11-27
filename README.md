@@ -165,3 +165,15 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 
 ## Docker compose
 
+ - **Why should we use docker compose?**
+   - to configure relationships between containers
+   - to save the docker container run settings in an easy-to-read file
+   - to create one-liner development environment startups
+   
+ - Docker compose is comprised of 2 separate but realted parts:
+   - 1. YAML - formatted file that describes our solution options for containers, networks and volumes
+   - 2. A CLI tool docker-compose used for local dev/test automation with those YAML files
+   
+ - docker-compose.yml:
+   - compose YAML format has its own versions: 1.x, 2.x, 3.x --> currently 3.7 (2019) - https://docs.docker.com/compose/compose-file/
+   - the YAML file can be used with docker-compose command for local docker automation or with docker directly in production with Swarm (as of v1.13)
