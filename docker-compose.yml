@@ -1,0 +1,14 @@
+version: '3.7'
+
+# same as: docker run -p 80:4000 -v $(pwd):/site bretfisher/jekyll-serve
+
+# notice the syntax - when we have more entities they end with s (plural) + we have - and all the entities,
+# while for the singular we have a key: value pair -->> see image: <image name> VS volumes: ...
+
+services:
+  jekyll:
+    image: bretfisher/jekyll-serve
+    volumes:
+      - .:/site
+    ports:
+      - '80:4000'

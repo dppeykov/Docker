@@ -1,0 +1,20 @@
+version: '3.7'  #if no version is specified - uses the default v1 - recommended v2 minimum
+
+# major secitons - services, volumes, networks
+
+services: # containers - same as docker run
+  servicename: # a friendly name - also a DNS name inside a network
+    image: # optional if you use build
+    command: # optional, replace the default CMD specified by the image
+    environment: # optional, same as -e in docker run
+    volumes: # optional - same as -v in docker run
+    depends_on: # shows on what services the current service will depend
+    ...
+  servicename2: # another service
+
+
+volumes: # optional - same as docker volume create
+
+
+networks: # optional - same as docker network create
+
