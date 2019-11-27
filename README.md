@@ -117,3 +117,22 @@
 
 Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu.be
 
+## Container lifetime and persistent data
+
+ - containers are usually **immutable and ephemeral** (exist only briefly - very short time)
+ - **immutable infrastructure** - only **re-deploy containers, never change** - if we need an upgrade or some change, we're re-deploying a whole new container - gives huge benefits in reliability, consistency and making changes reproducable
+ - ideally a container **shouldn't contain any unique data (persistent data)** = ensures the **"separation of concerns"** - the unique data is preserved while the container can be recycled 
+ - docker has 2 solutions for the persistent data problem - **volumes & bind mounts**
+ - **volumes** - make special location outside of the container UFS (Union File System) to store unique data - this allows to attach the data needed to the container/s we need and the container sees it as a local file path 
+ 
+> **IMPORTANT:** volumes need manual deletion, they are not removed with the container
+
+ - **bind mounts** - link container path to host path - sharing (mounting) a host directory or file into a container - again it looks like a local file/directory path from within the container and doesn't look like it is comming from the host
+ 
+### Data volumes
+
+ - **VOLUME** command in Dockerfile - 
+ 
+
+
+
