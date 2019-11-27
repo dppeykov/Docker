@@ -137,6 +137,7 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 
 > **IMPORTANT**: if we delete the containers, the volumes will stay - they will outlive the containers, because those are forms of a persistence storage - even using docker system prune will not delete the volumes that are in use - we need to stop the containers that are using the volumes first and then they can be removed
  
-
+ - **named volumes** - by default the volumes are using SHAs as a name which is not very convinient 
+ - **docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql** - will create new mysql container with a volume named mysql-db
 
 
