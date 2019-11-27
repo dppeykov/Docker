@@ -177,3 +177,5 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
  - docker-compose.yml:
    - compose YAML format has its own versions: 1.x, 2.x, 3.x --> currently 3.7 (2019) - https://docs.docker.com/compose/compose-file/
    - the YAML file can be used with docker-compose command for local docker automation or with docker directly in production with Swarm (as of v1.13)
+
+> Check the compose files in this repository
