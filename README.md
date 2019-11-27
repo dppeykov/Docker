@@ -145,7 +145,7 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
  - basically just 2 locations pointing to the same file/s
  - skips the UFS and host files overwrite any in container - when deleting the container the files on the host are not deleted and if the container use any files on the host and it has its own same files - the host wins and the container is using those files
  - **can't be use in Dockerfile**, must be at **container run** - the format is as follows:
-   - ... run -v /Users/user/stuff:/path/inside/the/container (Mac/Linux)
-   - ... run -v //c/Users/user/stuff:/path/inside/the/container (Windows)
+   - ... run -v /Users/user/stuff:/path/inside/the/container (Mac/Linux) --> host:container
+   - ... run -v //c/Users/user/stuff:/path/inside/the/container (Windows) --> host:container
 
 
