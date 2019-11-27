@@ -163,5 +163,5 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 > **NOTE:** this update works for minor versions - for the major version upgrade we need to use a different procedure, as most of the time the volume will not be compatible in format between the major versions
  ---
 
-
+## Docker compose
 
