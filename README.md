@@ -148,5 +148,19 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
    - ... run -v /Users/user/stuff:/path/inside/the/container (Mac/Linux) --> host:container
    - ... run -v //c/Users/user/stuff:/path/inside/the/container (Windows) --> host:container
  - **docker container run -d --name nginx -p 80:80 -v $(pwd):/usr/share/nginx/html nginx** - will create a nwe container listening on ports 80 on the host and the container, using the nginx, and mapping the current directory where the shell is ($(pwd)) to the /usr/share/nginx/html in the container
+---
+**Updating a DB example:** 
+ - we need to start with postgreSQL 6.1 and update to 6.2
+
+ - **docker container run -d --name psql -v psql:/var/lib/postgresql/data postgresql:9.6.1** --> creates the container psql with the volume psql
+ - **docker container logs -f psql** --> to check the logs in the container --> -f = follow --> to see when the container is ready to accept connections (done booting)
+ - **docker container stop psql** --> to stop the running container
+ - **docker container run -d --name psql2 -v psql:/var/lib/postgresql/data postgresql:9.6.2** --> creates another container psql2 using the same volume and updates the container with version 9.6.2 of the image
+ - **docker container ps -a** - at this point we have 2 containers 9.6.1 (stopped) and 9.6.2 (running) 
+ - **docker volume ls** - the volume is only 1 - psql
+ - **docker container logs -f psql2** --> to check the logs in the container and see when it is ready
+ 
+ ---
+
 
 
