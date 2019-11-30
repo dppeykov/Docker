@@ -179,3 +179,5 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
    - the YAML file can be used with docker-compose command for local docker automation or with docker directly in production with Swarm (as of v1.13)
 
 > Check the compose files in this repository.
+
+#########################################################
