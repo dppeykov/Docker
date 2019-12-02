@@ -193,7 +193,7 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
  - **docker node ls** - to see the nodes in the cluster - IMPORTANT: this information is visible only from the manager nodes
  - **docker swarm leave** - if we want a node to leave the cluster - for example if we want a node that was a worker to become a manager, we need to leave the cluster first and then add the node again as a manager
  - **docker service create --replicas 1 --name helloworld alpine ping docker.com** - to create a service helloworld wich is pinging docker.com and has 1 replica
- - **docker service scale helloworld=4** - to scale the application to run in 4 replicas
+ - **docker service scale helloworld=4** - to scale the application to run in 4 replicas - https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/
  - **docker service inspect --pretty helloworld** - to inspect the service and see the results in pretty format - **docker service inspect helloworld** - to see the JSON
  - **docker service ps \<SERVICE-ID>** - to see which nodes are running the service - which replica is started on which node - Swarm also shows you the DESIRED STATE and CURRENT STATE of the service task so you can see if tasks are running according to the service definition
  - **docker ps** - to see the running containers as usual
