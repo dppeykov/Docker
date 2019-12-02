@@ -186,5 +186,5 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 
  - We need ot create several nodes - they can be VMs, BMs, created with docker machine, in docker labs, in the cloud, etc.
  - Setting up docker Swarm - https://docs.docker.com/engine/swarm/swarm-tutorial/ + https://docs.docker.com/engine/swarm/key-concepts/
-
-##  
+ - **docekr swarm init --advertise-addr x.x.x.x** - to initialize a dcoker swarm cluster manager node - see the documentation: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
+   
