@@ -198,4 +198,16 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
  - **docker service ps \<SERVICE-ID>** - to see which nodes are running the service - which replica is started on which node - Swarm also shows you the DESIRED STATE and CURRENT STATE of the service task so you can see if tasks are running according to the service definition
  - **docker ps** - to see the running containers as usual
  - **docker service update** - to update a service (rolling update) - check https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/
-   
+
+
+> EXERCISE: Creating a swarm with an overlay network to allow the containers to talk to each other - creating a drupal service on 2 nodes swarm cluster:
+
+  - **docker swarm init --advertise-addr 192.168.0.18** - to initalize the swarm
+  - **docker swarm join-token manager** - to joint the other node as a manager
+  - **docker info + docker node ls + docker node ps** - to check the swarm cluster
+  - **docker network create --driver overlay mydrupal** - to create the overlay network with name mydrupal + **docker network ls** (the ingress overlay network already exists - we are adding 1 more overlay network)
+  - **docker service create --name psql --network mydrupal -e POSTGRES_PASSWORD=mypass postgres** - creates a postgreSQL - 1 replica by default + **docker service ls** to check if the servide is running + **docker service ps psql** - to see on which node (will be on node1)
+  - **docker container logs psql.1.z3on94s9h56koc7g0cm0zpash** - to see the logs in the container - should say LOG:  database system is ready to accept connections if all is ok
+  - **docker service create --name drupal --network mydrupal -p 80:80 drupal** - to create the drupal service and listen on 80 + **docker service ls** to check if the servide is running + **docker service ps psql** - to see on which node (will be on node2)
+  - at this point we can see the **drupal install** - follow the process to install - use postgres for DB name, DB username + mypass for DB pass + Advanced options: host = psql (the name of the postgreSQL service) + default port = 5432 - then install in the normal way
+
