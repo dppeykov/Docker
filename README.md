@@ -186,5 +186,15 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 
  - We need ot create several nodes - they can be VMs, BMs, created with docker machine, in docker labs, in the cloud, etc.
  - Setting up docker Swarm - https://docs.docker.com/engine/swarm/swarm-tutorial/ + https://docs.docker.com/engine/swarm/key-concepts/
- - **docker swarm init --advertise-addr \<MANAGER-IP>** - to initialize a dcoker swarm cluster manager node - see the documentation: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
+ - **docker swarm init --advertise-addr \<MANAGER-IP>** - to initialize a dcoker swarm cluster manager node - see the documentation: https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/ - will turn on the swarm mode and give back token with which the other nodes (managers/workers) can connect to the cluster - just copy the commands gave back - can be for other manager nodes or other workers
+ - **docker swarm join-token worker** - if we want to get the command returned by swarm init - this will give back the token for worker nodes
+ - **docker swarm join-token manager** - to get the token for a manager
+ - **docker info** - to see the state of the docker swarm cluster
+ - **docker node ls** - to see the nodes in the cluster - IMPORTANT: this information is visible only from the manager nodes
+ - **docker swarm leave** - if we want a node to leave the cluster - for example if we want a node that was a worker to become a manager, we need to leave the cluster first and then add the node again as a manager
+ - **docker service create --replicas 1 --name helloworld alpine ping docker.com** - to create a service helloworld wich is pinging docker.com and has 1 replica
+ - **docker service scale helloworld=4** - to scale the application to run in 4 replicas
+ - **docker service inspect --pretty helloworld** - to inspect the service and see the results in pretty format - **docker service inspect helloworld** - to see the JSON
+ - **docker service ps \<SERVICE-ID>** - to see which nodes are running the service - which replica is started on which node - Swarm also shows you the DESIRED STATE and CURRENT STATE of the service task so you can see if tasks are running according to the service definition
+ - **docker ps** - to see the running containers as usual
    
