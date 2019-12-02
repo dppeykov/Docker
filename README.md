@@ -211,3 +211,10 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
   - **docker service create --name drupal --network mydrupal -p 80:80 drupal** - to create the drupal service and listen on 80 + **docker service ls** to check if the servide is running + **docker service ps psql** - to see on which node (will be on node2)
   - at this point we can see the **drupal install** - follow the process to install - use postgres for DB name, DB username + mypass for DB pass + Advanced options: host = psql (the name of the postgreSQL service) + default port = 5432 - then install in the normal way
 
+## Routing mesh
+
+  - check the documentation here: https://docs.docker.com/engine/swarm/ingress/
+
+> Docker Engine swarm mode makes it easy to publish ports for services to make them **available to resources outside the swarm**. All nodes participate in an **ingress routing mesh. The routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm, even if there’s no task running on the node.** The routing mesh **routes all incoming requests to published ports** on available nodes to an active container.
+
+
