@@ -218,5 +218,9 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 > Docker Engine swarm mode makes it easy to publish ports for services to make them **available to resources outside the swarm**. All nodes participate in an **ingress routing mesh. The routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm, even if there’s no task running on the node.** The routing mesh **routes all incoming requests to published ports** on available nodes to an active container.
 
  - all the containers (tasks) using the docker overlay network driver can use the build-in load balancer to distribute the load in a round tobin fashion - if a task (container) for a service is running on only 1 node in the swarm cluster - it still can be reached via all the nodes in the cluster, because of the overlay connectivity
+ 
+## Swarm Stacks and Production Grade Compose
+
+ - **Stacks = Compose files for production** - stacks accept Compose files as their declarative definition for services, networks and volumes
 
 
