@@ -223,4 +223,7 @@ Video on prune and df: https://www.youtube.com/watch?v=_4QzP7uwtvI&feature=youtu
 
  - **Stacks = Compose files for production** - stacks accept Compose files as their declarative definition for services, networks and volumes
  - **docker stack deploy** - using to create stacks rather than docker service create
+ 
+ ![alt text](https://github.com/dppeykov/Docker/blob/master/Swarm_stack.png "Swarm Stack")
+ 
 
